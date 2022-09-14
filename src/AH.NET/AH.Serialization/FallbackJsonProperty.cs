@@ -1,7 +1,10 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace AH.Serialization
 {
+    // TODO: Write Tests to cover this class.
+    [PublicAPI]
     [AttributeUsage(AttributeTargets.Property)]
     public class FallbackJsonProperty : Attribute
     {

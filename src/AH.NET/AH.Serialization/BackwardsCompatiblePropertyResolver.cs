@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -12,6 +13,8 @@ namespace AH.Serialization
     /// <remarks>
     /// Use DefaultValueHandling = DefaultValueHandling.Ignore with this resolver, or else null values stored at alternate names may overwrite the value you want.
     /// </remarks>
+    // TODO: Write Tests to cover this class.
+    [PublicAPI]
     public class BackwardsCompatiblePropertyResolver : DefaultContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)

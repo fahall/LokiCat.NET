@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace AH.Serialization
 {
+    // TODO: Write Tests to cover this class. 
+    [PublicAPI]
     public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : DefaultContractResolver
     {
         protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
@@ -21,7 +24,7 @@ namespace AH.Serialization
 
                 var fallbackAttribute = member.GetCustomAttribute<FallbackJsonProperty>();
 
-                if (fallbackAttribute == null)
+                if (fallbackAttribute is null)
                 {
                     continue;
                 }
@@ -39,7 +42,7 @@ namespace AH.Serialization
 
             return properties;
         }
-
+        
         protected override JsonProperty CreateProperty(MemberInfo member,
             MemberSerialization memberSerialization)
         {

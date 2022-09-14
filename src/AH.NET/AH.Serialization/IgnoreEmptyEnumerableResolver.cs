@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Reflection;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace AH.Serialization
 {
+    // TODO: Write Tests to cover this function. 
+    [PublicAPI]
     public class IgnoreEmptyEnumerableResolver : DefaultContractResolver
     {
         protected override JsonProperty CreateProperty(MemberInfo member,
