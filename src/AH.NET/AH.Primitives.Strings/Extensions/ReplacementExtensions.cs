@@ -9,7 +9,7 @@ namespace AH.Essentials.Strings
         /// <summary>
         ///     A convenience extension version of Regex.Replace.
         /// </summary>
-        /// <param name="input">The string to search for a match.</param>
+        /// <param name="text">The string to search for a match.</param>
         /// <param name="pattern">The regular expression pattern to match.</param>
         /// <param name="replacement">The replacement string.</param>
         /// <param name="options">A bitwise combination of the enumeration values that provide options for matching.</param>
@@ -19,23 +19,38 @@ namespace AH.Essentials.Strings
         /// </returns>
         // TODO: Write Tests to cover this function. 
         [PublicAPI]
-        public static string ReplaceRegex(this string input, string pattern, string replacement,
+        [Pure]
+        public static string ReplaceRegex(this string text, string pattern, string replacement,
             RegexOptions options = RegexOptions.None) =>
-            Regex.Replace(input, pattern, replacement,
+            Regex.Replace(text, pattern, replacement,
                           options);
 
+        /// <summary>
+        /// Perform regular expression replacement on the input text
+        /// </summary>
+        /// <param name="text">Text to modify</param>
+        /// <param name="regex">Regular Expression to match</param>
+        /// <param name="replacement">Replacement (full Regex replacement support)</param>
+        /// <returns></returns>
         // TODO: Write Tests to cover this function. 
         [PublicAPI]
-        public static string ReplaceRegex(this string input, Regex regex, string replacement)
-        {
-            return regex.Replace(input, replacement);
-        }
+        [Pure]
+        public static string ReplaceRegex(this string text, Regex regex, string replacement)
+            => regex.Replace(text, replacement);
 
+        /// <summary>
+        /// Perform regular expression replacement on the input text
+        /// </summary>
+        /// <param name="text">Text to modify</param>
+        /// <param name="regex">Regular Expression to match</param>
+        /// <param name="replacement">Replacement (full Regex replacement support)</param>
+        /// <returns></returns>
         // TODO: Write Tests to cover this function. 
         [PublicAPI]
-        public static string ReplaceRegex(this string input, string pattern, MatchEvaluator replacement,
+        [Pure]
+        public static string ReplaceRegex(this string text, string pattern, MatchEvaluator replacement,
             RegexOptions options = RegexOptions.None) =>
-            Regex.Replace(input, pattern, replacement,
+            Regex.Replace(text, pattern, replacement,
                           options);
 
         /// <summary>
@@ -48,6 +63,7 @@ namespace AH.Essentials.Strings
         /// <returns></returns>
         // TODO: Write Tests to cover this function. 
         [PublicAPI]
+        [Pure]
         public static string Replace(this string originalString, string oldValue, string newValue,
             StringComparison comparisonType)
         {
