@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace AH.PrimitivesNumbers
+namespace AH.Primitives.Numbers
 {
     public static class NumberRange
     {

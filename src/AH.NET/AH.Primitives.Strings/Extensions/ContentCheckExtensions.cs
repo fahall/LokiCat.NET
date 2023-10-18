@@ -1,7 +1,7 @@
 using System;
 using JetBrains.Annotations;
 
-namespace AH.PrimitivesStrings
+namespace AH.Primitives.Strings
 {
     public static class ContentCheckExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace AH.PrimitivesStrings
+namespace AH.Primitives.Strings
 {
     public static class TrimExtensions
     {

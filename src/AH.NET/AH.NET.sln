@@ -26,6 +26,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Collections.Enumerables.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Disposables", "AH.Disposables\AH.Disposables.csproj", "{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Collections.ReadOnlyDictionaries", "AH.Collections.ReadOnlyDictionaries\AH.Collections.ReadOnlyDictionaries.csproj", "{CCA99B3E-1BD3-484E-B3E3-0B661FB52ED8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.URIs", "AH.URIs\AH.URIs.csproj", "{5FAB7FC9-9723-49C6-A093-74236119EAA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,5 +88,13 @@ Global
 		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA99B3E-1BD3-484E-B3E3-0B661FB52ED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA99B3E-1BD3-484E-B3E3-0B661FB52ED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA99B3E-1BD3-484E-B3E3-0B661FB52ED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA99B3E-1BD3-484E-B3E3-0B661FB52ED8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

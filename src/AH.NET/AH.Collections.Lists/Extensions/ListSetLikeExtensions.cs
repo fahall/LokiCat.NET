@@ -13,6 +13,7 @@ namespace AH.Collections.Lists
         /// <typeparam name="T"></typeparam>
         /// <returns>The last item in the list.</returns>
         /// <exception cref="EmptyCollectionException">Cannot pop from an empty collection</exception>
+
         // TODO: Write Tests to cover this function. 
         [PublicAPI]
         public static T PopFromEnd<T>(this IList<T> list)
