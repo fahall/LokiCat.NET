@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.NET", "AH.NET\AH.NET.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Collections.Enumerables.Tests", "AH.Collections.Enumerables.Tests\AH.Collections.Enumerables.Tests.csproj", "{31C9E619-49FD-48E5-99AB-8A2D22883148}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Disposables", "AH.Disposables\AH.Disposables.csproj", "{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,5 +80,9 @@ Global
 		{31C9E619-49FD-48E5-99AB-8A2D22883148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31C9E619-49FD-48E5-99AB-8A2D22883148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31C9E619-49FD-48E5-99AB-8A2D22883148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EABFA04-F6DA-4D2C-BA9D-DC4381A46955}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

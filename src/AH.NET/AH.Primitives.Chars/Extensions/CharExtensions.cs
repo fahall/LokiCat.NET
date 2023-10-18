@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace AH.Essentials.Chars
+namespace AH.Primitives.Chars
 {
     public static class CharExtensions
     {

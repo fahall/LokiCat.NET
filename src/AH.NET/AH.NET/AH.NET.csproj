@@ -12,6 +12,7 @@
       <ProjectReference Include="..\AH.Collections.HashSets\AH.Collections.HashSets.csproj" />
       <ProjectReference Include="..\AH.Collections.Lists\AH.Collections.Lists.csproj" />
       <ProjectReference Include="..\AH.Collections\AH.Collections.csproj" />
+      <ProjectReference Include="..\AH.Disposables\AH.Disposables.csproj" />
       <ProjectReference Include="..\AH.Primitives.Chars\AH.Primitives.Chars.csproj" />
       <ProjectReference Include="..\AH.Primitives.Numbers\AH.Primitives.Numbers.csproj" />
       <ProjectReference Include="..\AH.Primitives.Strings\AH.Primitives.Strings.csproj" />

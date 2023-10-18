@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 
-namespace AH.Essentials.Strings
+namespace AH.PrimitivesStrings
 {
     public static class ReplacementExtensions
     {
