@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Collections.ReadOnlyDict
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.URIs", "AH.URIs\AH.URIs.csproj", "{5FAB7FC9-9723-49C6-A093-74236119EAA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AH.Primitives.Strings.Tests", "AH.Primitives.Strings.Tests\AH.Primitives.Strings.Tests.csproj", "{0AC5D4D0-6AA2-4371-B67B-137E53774E19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -96,5 +98,9 @@ Global
 		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FAB7FC9-9723-49C6-A093-74236119EAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AC5D4D0-6AA2-4371-B67B-137E53774E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AC5D4D0-6AA2-4371-B67B-137E53774E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AC5D4D0-6AA2-4371-B67B-137E53774E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AC5D4D0-6AA2-4371-B67B-137E53774E19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
