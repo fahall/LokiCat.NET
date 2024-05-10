@@ -17,6 +17,7 @@ env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
   DOTNET_NOLOGO: true
   NuGetDirectory: ${{ github.workspace}}/nuget
+  SOURCE_ROOT: ${{ github.workspace }}/src 
 
 defaults:
   run:
@@ -76,7 +77,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
     - name: Run tests
-      run: dotnet test --configuration Release
+      run: dotnet test ${{ env.SOURCE_ROOT }} --configuration Release
 
   deploy:
     # Publish only when creating a GitHub Release
