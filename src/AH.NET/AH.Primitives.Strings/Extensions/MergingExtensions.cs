@@ -8,7 +8,7 @@ namespace AH.Primitives.Strings
     public static class MergingExtensions
     {
         /// <summary>
-        /// Merge two paths together, trying to combine any overlap between them.
+        /// Merge two paths together, trying to combine any overlap between them. (will use largest possible overlap if multiple overlaps exist)
         /// </summary>
         /// <example>
         /// left:  path/to/root/stuff/
@@ -46,15 +46,24 @@ namespace AH.Primitives.Strings
         {
             var right = child.Trim(Separators).Split(Separators);
             var left = root.Trim(Separators).Split(Separators);
-            var pathParts = left.Reverse() // Checking the end of left matches the beginning of right
-                                .Where((item, index) => right.Length > index && item != right[index])
-                                .Reverse() // Reverse back to original order
-                                .Concat(right)
-                                .ToArray();
+            Console.WriteLine(right.ToArray());
+            Console.WriteLine(left.ToArray());
 
-            var core = Path.Combine(pathParts);
+            var nonOverlapRight = right.ToArray();
 
-            return core;
+            for (var i = right.Length - 1; i >= 0; i--)
+            {
+                if (!left.TakeLast(i).SequenceEqual(right.Take(i)))
+                {
+                    // Not a match - Try shorter matches
+                    continue;
+                }
+                nonOverlapRight = right.Skip(i).ToArray();
+
+                break;
+            }
+
+            return string.Join(Path.DirectorySeparatorChar, left.Concat(nonOverlapRight).Where(p => p.HasGlyphs()));
         }
 
         private static char[] Separators = { '/', '\\' };
