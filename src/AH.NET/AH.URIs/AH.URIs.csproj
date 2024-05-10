@@ -5,6 +5,8 @@
         <Nullable>enable</Nullable>
         <AssemblyName>AH.Uris</AssemblyName>
         <RootNamespace>AH.Uris</RootNamespace>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
     </PropertyGroup>
 
     <ItemGroup>
