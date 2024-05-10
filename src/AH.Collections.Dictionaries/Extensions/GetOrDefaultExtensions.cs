@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
-namespace AH.Collections.Dictionaries
+namespace AH.Collections.Dictionaries.Extensions
 {
     public static class GetOrDefaultExtensions
     {

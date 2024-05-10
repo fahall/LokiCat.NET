@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using AH.Collections.Essentials.Exceptions;
+﻿using AH.Collections.Essentials.Exceptions;
 using JetBrains.Annotations;
 
-namespace AH.Collections.Enumerables
+namespace AH.Collections.Enumerables.Extensions
 {
     public static class RandomExtensions
     {

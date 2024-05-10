@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using MoreLinq;
+﻿using JetBrains.Annotations;
+using MoreLinq.Extensions;
 
-namespace AH.Collections.Enumerables
+namespace AH.Collections.Enumerables.Extensions
 {
     public static class NearestNeighborExtensions
     {
@@ -24,7 +22,7 @@ namespace AH.Collections.Enumerables
             TQuery item,
             Func<TQuery, TNeighbors, float> distanceBetween,
             int count = int.MaxValue) =>
-            neighbors.MinBy(n => distanceBetween(item, n)).Take(count);
+            neighbors.Minima(n => distanceBetween(item, n)).Take(count);
 
         /// <summary>
         /// Get the nearest neighbor (KNN where K = 1)

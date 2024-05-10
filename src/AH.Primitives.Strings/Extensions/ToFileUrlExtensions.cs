@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace AH.Primitives.Strings
+﻿namespace AH.Primitives.Strings.Extensions
 {
     public static class ToFileUrlExtensions
     {

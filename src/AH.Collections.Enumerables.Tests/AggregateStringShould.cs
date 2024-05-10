@@ -1,8 +1,7 @@
-using AH.Collections.Enumerables;
-using Xunit;
+using AH.Collections.Enumerables.Extensions;
 using FluentAssertions;
 
-namespace AH.Primitives.Strings.Tests;
+namespace AH.Collections.Enumerables.Tests;
 
 public class AggregateStringShould
 {

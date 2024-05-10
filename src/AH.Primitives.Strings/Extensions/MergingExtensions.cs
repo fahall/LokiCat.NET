@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-namespace AH.Primitives.Strings
+﻿namespace AH.Primitives.Strings.Extensions
 {
     public static class MergingExtensions
     {

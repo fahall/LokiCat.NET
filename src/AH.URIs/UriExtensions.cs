@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace AH.Uris
+﻿namespace AH.URIs
 {
     public static class UriExtensions
     {

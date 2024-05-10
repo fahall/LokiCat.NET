@@ -1,8 +1,7 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 
-namespace AH.Primitives.Strings
+namespace AH.Primitives.Strings.Extensions
 {
     public static class ReplacementExtensions
     {

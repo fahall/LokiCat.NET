@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
-namespace AH.Collections.Enumerables
+namespace AH.Collections.Enumerables.Extensions
 {
     public static class ToEnumerableExtensions
     {

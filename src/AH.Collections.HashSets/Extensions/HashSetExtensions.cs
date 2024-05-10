@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 
-namespace AH.Collections.Sets
+namespace AH.Collections.HashSets
 {
     public static class HashSetExtensions
     {

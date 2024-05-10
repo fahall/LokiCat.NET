@@ -1,8 +1,7 @@
-﻿using System;
-using AH.Primitives.Numbers;
+﻿using AH.Primitives.Numbers.Extensions;
 using JetBrains.Annotations;
 
-namespace AH.Primitives.Strings
+namespace AH.Primitives.Strings.Extensions
 {
     public static class SplittingExtensions
     {
