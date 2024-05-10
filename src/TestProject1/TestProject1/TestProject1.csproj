@@ -1,6 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Authors>Alex Hall</Authors>
+        <Description>Helper Functions I use in C#. Likely unoptimized. Proceed with caution.</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
         <TargetFramework>net6.0</TargetFramework>
         <Nullable>enable</Nullable>
 
