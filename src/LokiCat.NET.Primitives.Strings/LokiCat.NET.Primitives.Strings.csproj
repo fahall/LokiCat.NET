@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LokiCat.NET.NET.Primitives.Numbers\LokiCat.NET.NET.Primitives.Numbers.csproj" />
+    <ProjectReference Include="..\LokiCat.NET.Primitives.Numbers\LokiCat.NET.Primitives.Numbers.csproj" />
     <ProjectReference Include="..\LokiCat.NET.Primitives.Numbers\LokiCat.NET.Primitives.Numbers.csproj" />
   </ItemGroup>
 

@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LokiCat.NET.NET.Primitives.Strings\LokiCat.NET.NET.Primitives.Strings.csproj" />
+    <ProjectReference Include="..\LokiCat.NET.Primitives.Strings\LokiCat.NET.Primitives.Strings.csproj" />
     <ProjectReference Include="..\LokiCat.NET.Primitives.Strings\LokiCat.NET.Primitives.Strings.csproj" />
   </ItemGroup>
 
