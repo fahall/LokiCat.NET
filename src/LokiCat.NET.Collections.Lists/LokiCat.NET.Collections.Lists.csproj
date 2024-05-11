@@ -1,19 +1,26 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Authors>Alex Hall</Authors>
+        <Description>Simple extensions to commonly used types</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>LokiCat.NET.Collections.Lists</RootNamespace>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RootNamespace>LokiCat.NET.Collections.Lists</RootNamespace>
-  </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj" />
-    <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
-  </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0"/>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="../icon.png" Pack="true" PackagePath=""/>
+    </ItemGroup>
 </Project>

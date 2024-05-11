@@ -1,6 +1,4 @@
-﻿
-using FluentAssertions;
-using LokiCat.NET.Primitives.Strings.Extensions;
+﻿using FluentAssertions;
 using LokiCat.NET.Primitives.Strings.FilePaths;
 
 namespace LokiCat.NET.Primitives.Strings.Tests;
@@ -16,10 +14,10 @@ public class FilePathExtensionsShould
     [InlineData(@"D:/Documents\file.txt", "D:/Documents/file.txt")] // Already using forward slash
     [InlineData(@"folder1\folder2\file.txt", "folder1/folder2/file.txt")]
     [InlineData("folder1/folder2/file.txt", "folder1/folder2/file.txt")] // Already using forward slash
-    [InlineData(@"/root", @"/root")] // Correct Slash at beginning
-    [InlineData(@"root/", @"root/")] // Correct Slash at end
-    [InlineData(@"\root", @"/root")] // Slash at beginning
-    [InlineData(@"root\", @"root/")] // Slash at end
+    [InlineData("/root", "/root")] // Correct Slash at beginning
+    [InlineData("root/", "root/")] // Correct Slash at end
+    [InlineData(@"\root", "/root")] // Slash at beginning
+    [InlineData(@"root\", "root/")] // Slash at end
     public void ConvertToUnixPath(string input, string expected)
     {
         input.ToUnixPath().Should().Be(expected);
@@ -34,8 +32,8 @@ public class FilePathExtensionsShould
     [InlineData(@"D:\Documents\file.txt", @"D:\Documents\file.txt")] // Already using backslash
     [InlineData("folder1/folder2/file.txt", @"folder1\folder2\file.txt")]
     [InlineData(@"folder1\folder2\file.txt", @"folder1\folder2\file.txt")] // Already using backslash
-    [InlineData(@"/root", @"\root")] // Slash at beginning
-    [InlineData(@"root/", @"root\")] // Slash at end
+    [InlineData("/root", @"\root")] // Slash at beginning
+    [InlineData("root/", @"root\")] // Slash at end
     [InlineData(@"\root", @"\root")] // Correct Slash at beginning
     [InlineData(@"root\", @"root\")] // Correct Slash at end
     

@@ -4,7 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <RootNamespace>LokiCat.NET.Collections.Enumerables.Tests</RootNamespace>
@@ -24,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LokiCat.NET.Collections.Enumerables\LokiCat.NET.Collections.Enumerables.csproj" />
     <ProjectReference Include="..\LokiCat.NET.Collections.Enumerables\LokiCat.NET.Collections.Enumerables.csproj" />
   </ItemGroup>
 
