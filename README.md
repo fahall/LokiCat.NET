@@ -1,4 +1,4 @@
-[![Build & Test](https://github.com/fahall/AH.NET/actions/workflows/deploy.yml/badge.svg)](https://github.com/fahall/AH.NET/actions/workflows/deploy.yml)
+[![Build & Test](https://github.com/fahall/LokiCat.NET/actions/workflows/deploy.yml/badge.svg)](https://github.com/fahall/LokiCat.NET/actions/workflows/deploy.yml)
 
-# AH.NET
+# LokiCat.NET
 Alex's .NET Utilities
