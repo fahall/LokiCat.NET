@@ -1,5 +1,6 @@
 using LokiCat.NET.Primitives.Strings.Extensions;
 using FluentAssertions;
+using LokiCat.NET.Primitives.Strings.FilePaths;
 
 namespace LokiCat.NET.Primitives.Strings.Tests;
 
@@ -24,7 +25,7 @@ public class PathMergingShould
     [InlineData("C:/Users/FAHal/repos/charadium/src/Charadium/Assets", "Assets/App/Features/DebugConsole/Tests/DebugConsoleAlternateTestScene.unity", "C:/Users/FAHal/repos/charadium/src/Charadium/Assets/App/Features/DebugConsole/Tests/DebugConsoleAlternateTestScene.unity")]
     public void NotDuplicateWhenPathsHaveSharedComponents(string left, string right, string expected)
     {
-        left.ToWindowsPath().MergePath(right.ToWindowsPath()).Should().Be(expected.ToPathForCurrentPlatform(), "Windows paths should be merged correctly");
-        left.ToUnixPath().MergePath(right.ToUnixPath()).ToPathForCurrentPlatform().Should().Be(expected.ToPathForCurrentPlatform(), "Unix paths should be merged correctly");
+        left.ToWindowsPath().MergePathWindows(right.ToWindowsPath()).Should().Be(expected.ToWindowsPath(), "Windows paths should be merged correctly");
+        left.ToUnixPath().MergePathUnix(right.ToUnixPath()).Should().Be(expected.ToUnixPath(), "Unix paths should be merged correctly");
     }
 }
