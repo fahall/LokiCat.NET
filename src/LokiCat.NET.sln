@@ -3,37 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections", "LokiCat.Collections\LokiCat.Collections.csproj", "{F5D7C16F-DFF9-4B84-9FF5-AF963B43D42F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections", "LokiCat.NET.Collections\LokiCat.NET.Collections.csproj", "{F5D7C16F-DFF9-4B84-9FF5-AF963B43D42F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.Dictionaries", "LokiCat.Collections.Dictionaries\LokiCat.Collections.Dictionaries.csproj", "{BBD75AFD-98DC-4B3B-AF1D-CC94426C976F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Dictionaries", "LokiCat.NET.Collections.Dictionaries\LokiCat.NET.Collections.Dictionaries.csproj", "{BBD75AFD-98DC-4B3B-AF1D-CC94426C976F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.Enumerables", "LokiCat.Collections.Enumerables\LokiCat.Collections.Enumerables.csproj", "{4250AC58-BE18-4DC2-BC81-88BF41593DD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Enumerables", "LokiCat.NET.Collections.Enumerables\LokiCat.NET.Collections.Enumerables.csproj", "{4250AC58-BE18-4DC2-BC81-88BF41593DD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.Essentials.Exceptions", "LokiCat.Collections.Essentials.Exceptions\LokiCat.Collections.Essentials.Exceptions.csproj", "{1F6CA830-F0BF-412B-85C5-0D78718F258F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Exceptions", "LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj", "{1F6CA830-F0BF-412B-85C5-0D78718F258F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.HashSets", "LokiCat.Collections.HashSets\LokiCat.Collections.HashSets.csproj", "{5C3C1E42-433C-412B-B35E-04B92B8C8B27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.HashSets", "LokiCat.NET.Collections.HashSets\LokiCat.NET.Collections.HashSets.csproj", "{5C3C1E42-433C-412B-B35E-04B92B8C8B27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.Lists", "LokiCat.Collections.Lists\LokiCat.Collections.Lists.csproj", "{C5097739-0EAE-4935-AD0C-D97AF5EFE2C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Lists", "LokiCat.NET.Collections.Lists\LokiCat.NET.Collections.Lists.csproj", "{C5097739-0EAE-4935-AD0C-D97AF5EFE2C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.ReadOnlyDictionaries", "LokiCat.Collections.ReadOnlyDictionaries\LokiCat.Collections.ReadOnlyDictionaries.csproj", "{14EF51B3-76AC-4E23-9EFF-EDBE68A76191}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.ReadOnlyDictionaries", "LokiCat.NET.Collections.ReadOnlyDictionaries\LokiCat.NET.Collections.ReadOnlyDictionaries.csproj", "{14EF51B3-76AC-4E23-9EFF-EDBE68A76191}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Disposables", "LokiCat.Disposables\LokiCat.Disposables.csproj", "{410E51E0-8DD6-473D-96F6-3051D377B9BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Disposables", "LokiCat.NET.Disposables\LokiCat.NET.Disposables.csproj", "{410E51E0-8DD6-473D-96F6-3051D377B9BC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET", "LokiCat.NET\LokiCat.NET.csproj", "{BE4F2496-661D-4E51-99E3-30AE4DE75CE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Primitives.Chars", "LokiCat.Primitives.Chars\LokiCat.Primitives.Chars.csproj", "{63DB5D6D-ED9B-42E9-9102-780E02E1E98F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Primitives.Chars", "LokiCat.NET.Primitives.Chars\LokiCat.NET.Primitives.Chars.csproj", "{63DB5D6D-ED9B-42E9-9102-780E02E1E98F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Primitives.Numbers", "LokiCat.Primitives.Numbers\LokiCat.Primitives.Numbers.csproj", "{CDD803C3-CCE9-4CA7-B5E4-AA9C1C41C0F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Primitives.Numbers", "LokiCat.NET.Primitives.Numbers\LokiCat.NET.Primitives.Numbers.csproj", "{CDD803C3-CCE9-4CA7-B5E4-AA9C1C41C0F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Primitives.Strings", "LokiCat.Primitives.Strings\LokiCat.Primitives.Strings.csproj", "{2C1FBBDE-32CF-4B03-AD34-337D3B6F548A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Primitives.Strings", "LokiCat.NET.Primitives.Strings\LokiCat.NET.Primitives.Strings.csproj", "{2C1FBBDE-32CF-4B03-AD34-337D3B6F548A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Serialization", "LokiCat.Serialization\LokiCat.Serialization.csproj", "{1B798670-27D7-423C-ACB6-99FB925F1122}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Serialization", "LokiCat.NET.Serialization\LokiCat.NET.Serialization.csproj", "{1B798670-27D7-423C-ACB6-99FB925F1122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.URIs", "LokiCat.URIs\LokiCat.URIs.csproj", "{BA4CB754-A459-496F-9BC0-9F5DFB892EDB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.URIs", "LokiCat.NET.URIs\LokiCat.NET.URIs.csproj", "{BA4CB754-A459-496F-9BC0-9F5DFB892EDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Primitives.Strings.Tests", "LokiCat.Primitives.Strings.Tests\LokiCat.Primitives.Strings.Tests.csproj", "{5977F912-353E-4520-9FA3-E873737FA6B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Primitives.Strings.Tests", "LokiCat.NET.Primitives.Strings.Tests\LokiCat.NET.Primitives.Strings.Tests.csproj", "{5977F912-353E-4520-9FA3-E873737FA6B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.Collections.Enumerables.Tests", "LokiCat.Collections.Enumerables.Tests\LokiCat.Collections.Enumerables.Tests.csproj", "{7844F2D4-4FEC-4448-909E-700DF3ACFF86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Enumerables.Tests", "LokiCat.NET.Collections.Enumerables.Tests\LokiCat.NET.Collections.Enumerables.Tests.csproj", "{7844F2D4-4FEC-4448-909E-700DF3ACFF86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
