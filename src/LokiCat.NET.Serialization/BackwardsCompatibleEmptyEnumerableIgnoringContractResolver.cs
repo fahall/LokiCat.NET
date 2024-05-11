@@ -7,9 +7,13 @@ using Newtonsoft.Json.Serialization;
 namespace LokiCat.NET.Serialization;
 
 // TODO: Write Tests to cover this class. 
+/// <summary>
+/// Supports <see cref="FallbackJsonProperty"/> for backwards compatible json property name changes  and ignores empty enumerables.
+/// </summary>
 [PublicAPI]
 public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : DefaultContractResolver
 {
+    /// <inheritdoc />
     protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
     {
         var typeMembers = GetSerializableMembers(type);
@@ -40,7 +44,8 @@ public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : Defaul
 
         return properties;
     }
-        
+
+    /// <inheritdoc />
     protected override JsonProperty CreateProperty(MemberInfo member,
         MemberSerialization memberSerialization)
     {

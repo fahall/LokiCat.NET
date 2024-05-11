@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for checking for nulls in collections
+/// </summary>
 public static class NullCheckExtensions
 {
     /// <summary>

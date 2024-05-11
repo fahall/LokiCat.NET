@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for converting between IEnumerable and IEnumerator
+/// </summary>
 public static class ToEnumerableExtensions
 {
     /// <summary>

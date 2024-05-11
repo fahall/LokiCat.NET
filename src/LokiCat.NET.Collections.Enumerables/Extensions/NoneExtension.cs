@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for checking if collections are empty
+/// </summary>
 public static class NoneExtension
 {
     /// <summary>

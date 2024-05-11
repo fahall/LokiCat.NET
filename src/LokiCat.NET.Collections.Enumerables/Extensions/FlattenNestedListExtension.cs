@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for flattening nested collections
+/// </summary>
 public static class FlattenNestedListExtension
 {
     /// <summary>

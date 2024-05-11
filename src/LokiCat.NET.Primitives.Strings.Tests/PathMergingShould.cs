@@ -1,4 +1,3 @@
-using LokiCat.NET.Primitives.Strings.Extensions;
 using FluentAssertions;
 using LokiCat.NET.Primitives.Strings.FilePaths;
 

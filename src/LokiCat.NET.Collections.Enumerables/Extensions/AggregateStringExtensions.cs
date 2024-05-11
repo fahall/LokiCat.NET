@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for aggregating collections into strings
+/// </summary>
 [PublicAPI]
 public static class AggregateStringExtension
 {

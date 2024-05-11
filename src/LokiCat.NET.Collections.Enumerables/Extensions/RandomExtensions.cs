@@ -3,6 +3,9 @@ using LokiCat.NET.Collections.Exceptions;
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for working with random values
+/// </summary>
 public static class RandomExtensions
 {
     /// <inheritdoc>

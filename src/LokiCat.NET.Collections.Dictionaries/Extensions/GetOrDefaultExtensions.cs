@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Dictionaries.Extensions;
 
+/// <summary>
+/// Extensions for getting values from dictionaries
+/// </summary>
 public static class GetOrDefaultExtensions
 {
     /// <summary>

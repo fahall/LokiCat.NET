@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Extensions;
 
+/// <summary>
+/// Extensions for flushing collections
+/// </summary>
 public static class FlushingExtensions
 {
     /// <summary>

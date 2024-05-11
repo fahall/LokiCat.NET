@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for checking if all booleans in a collection are true
+/// </summary>
 public static class AllExtensions
 {
     /// <param name="booleans"></param>

@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Lists;
 
+/// <summary>
+/// Extensions for filling lists.
+/// </summary>
 public static class FillingExtensions
 {
     /// <summary>

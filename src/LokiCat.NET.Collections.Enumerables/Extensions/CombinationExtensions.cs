@@ -2,21 +2,52 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for generating combinations and permutations
+/// </summary>
 public static class CombinationExtensions
 {
+    /// <summary>
+    /// Get all combinations of a given length from a list
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="lengths"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetCombinations<T>(this IEnumerable<T> list,
         IEnumerable<int> lengths) where T : IComparable =>
         Collect(list, GetCombinationsWithDuplicates, lengths);
 
+    /// <summary>
+    /// Get all unique combinations of a given length from a list
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="lengths"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetCombinationsUnique<T>(this IEnumerable<T> list,
         IEnumerable<int> lengths) where T : IComparable =>
         Collect(list, GetCombinationsUnique, lengths.Distinct());
 
+    /// <summary>
+    /// Get all permutations of a given length from a list
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="lengths"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetPermutations<T>(this IEnumerable<T> list, IEnumerable<int> lengths) => Collect(list, GetPermutationsWithDuplicates, lengths);
 
+    /// <summary>
+    /// Get all unique permutations of a given length from a list
+    /// </summary>
+    /// <param name="list"></param>
+    /// <param name="lengths"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetPermutationsUnique<T>(this IEnumerable<T> list, IEnumerable<int> lengths) => Collect(list, GetPermutationsUnique, lengths.Distinct());
 

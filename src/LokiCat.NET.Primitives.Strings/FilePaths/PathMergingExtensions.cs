@@ -3,7 +3,10 @@ using LokiCat.NET.Primitives.Strings.Extensions;
 
 namespace LokiCat.NET.Primitives.Strings.FilePaths;
 
-public static class MergingExtensions
+/// <summary>
+/// Extensions for merging paths together.
+/// </summary>
+public static class PathMergingExtensions
 {
     /// <summary>
     /// Merge two paths together, trying to combine any overlap between them. (will use largest possible overlap if multiple overlaps exist)
@@ -16,7 +19,6 @@ public static class MergingExtensions
     /// </example>
     /// <param name="root"></param>
     /// <param name="child"></param>
-    /// <param name="delimiter">Delimiter to use for combining the paths</param>
     /// <remarks>
     /// Deals with leading and trailing directory separators.
     /// </remarks>
@@ -35,7 +37,6 @@ public static class MergingExtensions
     /// </example>
     /// <param name="root"></param>
     /// <param name="child"></param>
-    /// <param name="delimiter">Delimiter to use for combining the paths</param>
     /// <remarks>
     /// Deals with leading and trailing directory separators.
     /// </remarks>

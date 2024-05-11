@@ -3,6 +3,9 @@ using MoreLinq.Extensions;
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for Nearest Neighbor calculations
+/// </summary>
 public static class NearestNeighborExtensions
 {
     /// <summary>

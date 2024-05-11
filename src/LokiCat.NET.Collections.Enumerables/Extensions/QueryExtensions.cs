@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions;
 
+/// <summary>
+/// Extensions for querying collections.
+/// </summary>
 public static class QueryExtensions
 {
     /// <summary>

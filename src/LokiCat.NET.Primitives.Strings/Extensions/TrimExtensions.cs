@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Primitives.Strings.Extensions;
 
+/// <summary>
+/// Extensions for trimming strings.
+/// </summary>
 public static class TrimExtensions
 {
     /// <summary>

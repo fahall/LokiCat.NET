@@ -3,6 +3,9 @@ using JetBrains.Annotations;
 
 namespace LokiCat.NET.Primitives.Strings.Extensions;
 
+/// <summary>
+/// Extensions for replacing the contents within strings.
+/// </summary>
 public static class ReplacementExtensions
 {
     /// <summary>

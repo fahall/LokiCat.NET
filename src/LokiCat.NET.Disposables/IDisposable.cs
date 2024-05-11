@@ -12,5 +12,8 @@ namespace LokiCat.NET.Disposables;
 [PublicAPI]
 public interface IDisposable<out T> : IDisposable
 {
+    /// <summary>
+    /// The value of the disposable.
+    /// </summary>
     public T Value { get; }
 }

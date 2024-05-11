@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.HashSets;
 
+/// <summary>
+/// Extensions for HashSets
+/// </summary>
 public static class HashSetExtensions
 {
     /// <summary>

@@ -16,6 +16,7 @@ namespace LokiCat.NET.Serialization;
 [PublicAPI]
 public class BackwardsCompatiblePropertyResolver : DefaultContractResolver
 {
+    /// <inheritdoc />
     protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
     {
         var typeMembers = GetSerializableMembers(type);

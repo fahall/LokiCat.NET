@@ -2,10 +2,13 @@ using JetBrains.Annotations;
 
 namespace LokiCat.NET.Primitives.Strings.Extensions;
 
+/// <summary>
+/// Extensions for checking the contents of strings.
+/// </summary>
 public static class ContentCheckExtensions
 {
     /// <summary>
-    /// Returns true if the <paramref name="text" /> string contans the <paramref name="search" /> string using the
+    /// Returns true if the <paramref name="text" /> string contains the <paramref name="search" /> string using the
     /// supplied <paramref name="comparisonType" />.
     /// </summary>
     /// <param name="text">The string to test for the check string.</param>

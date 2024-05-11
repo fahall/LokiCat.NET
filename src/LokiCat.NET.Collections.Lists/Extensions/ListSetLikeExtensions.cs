@@ -3,6 +3,9 @@ using LokiCat.NET.Collections.Exceptions;
 
 namespace LokiCat.NET.Collections.Lists;
 
+/// <summary>
+/// Extensions for working with lists in a set-like manner.
+/// </summary>
 public static class ListSetLikeExtensions
 {
     /// <summary>
@@ -12,7 +15,6 @@ public static class ListSetLikeExtensions
     /// <typeparam name="T"></typeparam>
     /// <returns>The last item in the list.</returns>
     /// <exception cref="EmptyCollectionException">Cannot pop from an empty collection</exception>
-
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static T PopFromEnd<T>(this IList<T> list)

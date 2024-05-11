@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Primitives.Chars.Extensions;
 
+/// <summary>
+/// Extensions for char primitives
+/// </summary>
 public static class CharExtensions
 {
     /// <returns>

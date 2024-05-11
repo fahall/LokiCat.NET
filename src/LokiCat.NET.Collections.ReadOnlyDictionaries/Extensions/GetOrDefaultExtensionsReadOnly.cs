@@ -2,6 +2,9 @@
 
 namespace LokiCat.NET.Collections.ReadOnlyDictionaries.Extensions;
 
+/// <summary>
+/// Extensions for getting values from readonly dictionaries.
+/// </summary>
 public static class GetOrDefaultExtensionsReadOnly
 {
     /// <summary>
