@@ -7,6 +7,7 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
+        <EnablePackageValidation>true</EnablePackageValidation>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
