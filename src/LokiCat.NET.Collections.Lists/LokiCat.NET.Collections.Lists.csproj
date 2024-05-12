@@ -14,14 +14,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj"/>
+        <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0"/>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+          <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="../icon.png" Pack="true" PackagePath=""/>
-        <None Include="docs/README.md" Pack="true" PackagePath="/"/>
+        <None Include="../icon.png" Pack="true" PackagePath="" />
+        <None Include="docs/README.md" Pack="true" PackagePath="/" />
     </ItemGroup>
 </Project>
