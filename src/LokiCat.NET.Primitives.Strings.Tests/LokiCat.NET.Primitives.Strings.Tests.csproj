@@ -6,6 +6,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RootNamespace>LokiCat.NET.Primitives.Strings.Tests</RootNamespace>
+        <PackageIcon>$(SolutionIconPath)</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>

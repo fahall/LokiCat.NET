@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <RootNamespace>LokiCat.NET.URIs</RootNamespace>
+        <PackageIcon>$(SolutionIconPath)</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>

@@ -7,11 +7,13 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <EnablePackageValidation>true</EnablePackageValidation>
+        <EnablePackageValidation Condition="'$(IsTestProject)' == 'true'">false</EnablePackageValidation>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageProjectUrl>https://www.alexhall.org</PackageProjectUrl>
         <PackageTags>extensions,primitives,collections,convenience,experimental</PackageTags>
+        <SolutionIconPath>..\icon.png</SolutionIconPath>
     </PropertyGroup>
     <ItemGroup>
         <None Include="icon.png" Pack="true" PackagePath="/" />

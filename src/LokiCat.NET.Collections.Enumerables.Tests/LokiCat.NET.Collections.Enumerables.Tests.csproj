@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -7,6 +6,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RootNamespace>LokiCat.NET.Collections.Enumerables.Tests</RootNamespace>
+        <PackageIcon>$(SolutionIconPath)</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
