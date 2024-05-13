@@ -1,0 +1,87 @@
+﻿name: Release
+# Creates a new release of the application.
+# Runs full build and deploy at most 1 time per day and is triggered by a push to `main`
+# Can be triggered manually. 
+# Manual runs are not limited to 1 build/deploy per day.
+# Release Notes generated using https://github.com/release-drafter/release-drafter/blob/master/README.md
+
+on:
+  workflow_dispatch: {} # Allows manual triggering of the workflow
+  push:
+    branches:
+      - main
+
+jobs:
+  # We only run automated staging releases if they have not yet been run for this commit.
+  # Manual releases can always be triggered
+  # If there are any releases that have a tag prefixed with v and that were released in the last 24hrs, we will skip this job.
+  check-deploy-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT}}
+
+      - name: Check for Tag Starting with "v"
+        id: check-release
+        run: |
+          should_deploy="true"
+          
+          if [[ "${{ github.event_name }}" != "workflow_dispatch" ]]; then
+            git fetch --tags origin ${{ github.sha }}
+            tags=$(git tag --points-at ${{ github.sha }} --list 'v*')
+            if [[ -n $tags ]]; then
+              should_deploy="false"
+            fi
+          fi
+
+          echo "should-deploy: $should_deploy"
+          echo "should-deploy=$should_deploy" >> $GITHUB_OUTPUT
+
+    outputs:
+      should-deploy: ${{ steps.check-release.outputs.should-deploy }}
+  
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+      - name: Run tests
+        run: dotnet test ${{ vars.SOURCE_ROOT }} --configuration Release
+
+  stg-release:
+    runs-on: ubuntu-latest
+    needs: [run-test, check-deploy-status]
+    if: ${{ needs.check-deploy-status.outputs.should-deploy == 'true' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/get-version-number
+        id: version
+      - uses: release-drafter/release-drafter@v5
+        id: create-release
+        with:
+          name: ${{ steps.version.outputs.version }}
+          tag: ${{ steps.version.outputs.version-tag }}
+          prerelease: true
+          publish: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
+    outputs:
+      ########################################
+      # Release Tag
+      # Tag added to repo and associated with release. 
+      # Format: "v<MAJOR>.<Minor>.<patch>"
+      # Example: v1.20.150
+      release-tag: ${{ steps.version.outputs.version-tag  }}
+      ########################################
+      # Version Number: 
+      # The version number to assign to release
+      # No prefixes, only digits and . allowed
+      # Format: <MAJOR>.<Minor>.<patch>
+      # Example: 1.20.150
+      version-number: ${{ steps.version.outputs.version }}
