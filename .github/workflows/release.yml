@@ -49,7 +49,7 @@ jobs:
       - name: Run tests
         run: dotnet test ${{ vars.SOURCE_ROOT }} --configuration Release
 
-  stg-release:
+  create-release:
     runs-on: ubuntu-latest
     needs: [run-test, check-deploy-status]
     if: ${{ needs.check-deploy-status.outputs.should-deploy == 'true' }}
