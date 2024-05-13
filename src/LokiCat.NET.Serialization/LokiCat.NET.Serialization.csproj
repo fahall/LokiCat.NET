@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <RootNamespace>LokiCat.NET.Serialization</RootNamespace>
-        <PackageIcon>$(SolutionIconPath)</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <None Include="docs/README.md" Pack="true" PackagePath="/" />
+        <None Include="../icon.png" Pack="true" PackagePath="/" />
     </ItemGroup>
 </Project>

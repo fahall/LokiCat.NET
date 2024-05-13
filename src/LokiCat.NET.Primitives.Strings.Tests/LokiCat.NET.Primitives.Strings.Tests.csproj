@@ -6,7 +6,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RootNamespace>LokiCat.NET.Primitives.Strings.Tests</RootNamespace>
-        <PackageIcon>$(SolutionIconPath)</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
         <NoWarn>$(NoWarn);1591</NoWarn> <!-- Ignore missing XML documentation -->
     </PropertyGroup>
 
@@ -26,6 +26,7 @@
         <ProjectReference Include="..\LokiCat.NET.Primitives.Strings\LokiCat.NET.Primitives.Strings.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <None Include="docs/README.md" Pack="true" PackagePath="/" />
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
     </ItemGroup>
 </Project>

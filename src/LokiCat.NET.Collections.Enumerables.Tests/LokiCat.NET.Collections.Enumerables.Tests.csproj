@@ -6,7 +6,7 @@
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <RootNamespace>LokiCat.NET.Collections.Enumerables.Tests</RootNamespace>
-        <PackageIcon>$(SolutionIconPath)</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
         <NoWarn>$(NoWarn);1591</NoWarn> <!-- Ignore missing XML documentation -->
     </PropertyGroup>
 
