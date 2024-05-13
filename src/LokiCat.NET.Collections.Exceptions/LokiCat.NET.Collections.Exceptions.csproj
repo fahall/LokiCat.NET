@@ -1,4 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <RootNamespace>LokiCat.NET.Collections.Exceptions</RootNamespace>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
     <ItemGroup>
         <None Include="docs/README.md" Pack="true" PackagePath="/" />
         <None Include="../icon.png" Pack="true" PackagePath="/" />
