@@ -4,7 +4,6 @@
         <Authors>Alex Hall</Authors>
         <Description>Simple extensions to commonly used types</Description>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <EnablePackageValidation Condition="'$(IsTestProject)' == 'true'">false</EnablePackageValidation>
