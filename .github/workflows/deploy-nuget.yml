@@ -9,9 +9,14 @@ on:
   pull_request:
     branches:
       - '*'          # Run the workflow for all pull requests
-  release:
-    types:
-      - published    # Run the workflow when a new GitHub release is published
+        
+  workflow_call:
+    inputs:
+      skipTests:
+        required: false
+        default: false
+        description: "Skip running tests (default: false). Use if you have already run tests in a previous job."
+        type: boolean
 
 env:
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
@@ -71,6 +76,7 @@ jobs:
 
   run_test:
     runs-on: ubuntu-latest
+    if: ${{ !inputs.skipTests }}
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET

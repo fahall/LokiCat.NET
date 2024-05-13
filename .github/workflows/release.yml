@@ -83,6 +83,7 @@ jobs:
         with:
           name: ${{ steps.version.outputs.version }}
           tag: ${{ steps.version.outputs.version_tag }}
+          prerelease: true
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -100,3 +101,14 @@ jobs:
       # Format: <MAJOR>.<Minor>.<patch>
       # Example: 1.20.150
       version-number: ${{ steps.version.outputs.version }}
+      
+  deploy-nuget:
+    uses: ./.github/workflows/deploy-nuget.yml
+    needs: [create-release, run-test]
+    secrets: inherit
+    if: ${{ needs.create-release.outputs.release-tag != '' }}
+    with:
+      skipTests: true
+    
+
+      
