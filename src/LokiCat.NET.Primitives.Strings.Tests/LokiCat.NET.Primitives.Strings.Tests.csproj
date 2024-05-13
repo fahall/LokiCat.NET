@@ -25,8 +25,7 @@
     <ItemGroup>
         <ProjectReference Include="..\LokiCat.NET.Primitives.Strings\LokiCat.NET.Primitives.Strings.csproj" />
     </ItemGroup>
-    <ItemGroup>
+    <PropertyGroup>
         <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
-    </ItemGroup>
 </Project>
