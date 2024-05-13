@@ -15,10 +15,8 @@ public class AggregateStringShould
 
         actual.Should().Be(EXPECTED);
 
-            
         actual = collection.AggregateString(':'); // Works with char inputs too
         actual.Should().Be(EXPECTED);
-
     }
 
     [Fact]

@@ -17,14 +17,14 @@ public static class FillingExtensions
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
     [PublicAPI]
-
     public static List<T> EnsureMinimumLength<T>(this List<T> list, int minLength, T defaultValue)
     {
         ArgumentNullException.ThrowIfNull(list);
 
-        return list.Select(i => i).Concat(Enumerable.Range(0,Math.Max(0, minLength - list.Count)).Select(_ => defaultValue)).ToList();
+        return list.Select(i => i)
+                   .Concat(Enumerable.Range(0, Math.Max(0, minLength - list.Count)).Select(_ => defaultValue)).ToList();
     }
-        
+
     /// <summary>
     /// Fill a list with a computed default value until it reaches a minimum length.
     /// </summary>
@@ -41,6 +41,8 @@ public static class FillingExtensions
 
         ArgumentNullException.ThrowIfNull(defaultValue);
 
-        return list.Select(i => i).Concat(Enumerable.Range(0,Math.Max(0, minLength - list.Count)).Select(_ => defaultValue())).ToList();
+        return list.Select(i => i)
+                   .Concat(Enumerable.Range(0, Math.Max(0, minLength - list.Count)).Select(_ => defaultValue()))
+                   .ToList();
     }
 }

@@ -13,6 +13,7 @@ public static class ToEnumerableExtensions
     /// <param name="enumerator">The enumerator to coerce into an IEnumerable</param>
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static IEnumerable<T> AsEnumerable<T>(this IEnumerator<T> enumerator)

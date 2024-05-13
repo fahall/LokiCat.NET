@@ -49,7 +49,7 @@ public static class ContentCheckExtensions
     [PublicAPI]
     [Pure]
     public static bool IsNullOrWhitespace(this string text) => string.IsNullOrWhiteSpace(text);
-        
+
     /// <summary>
     /// Check if the string has any visible glyphs (e.g. printed non-whitespace characters)
     /// </summary>

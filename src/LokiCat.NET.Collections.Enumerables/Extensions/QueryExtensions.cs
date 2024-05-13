@@ -15,9 +15,11 @@ public static class QueryExtensions
     /// <param name="defaultValue">The value to return if no match is found</param>
     /// <typeparam name="T"></typeparam>
     /// <returns>The first match found if any, otherwise the default value</returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate, T defaultValue) => enumerable.FirstOrDefault(predicate, () => defaultValue);
+    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate, T defaultValue) =>
+        enumerable.FirstOrDefault(predicate, () => defaultValue);
 
     /// <summary>
     /// Get the first item matching a predicate; if no match exists, return a default value.
@@ -49,7 +51,8 @@ public static class QueryExtensions
     /// <typeparam name="T"></typeparam>
     /// <returns>The first item, if any, otherwise the default value</returns>
     [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T> getDefaultValue) => enumerable.FirstOrDefault(_ => true, getDefaultValue);
+    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T> getDefaultValue) =>
+        enumerable.FirstOrDefault(_ => true, getDefaultValue);
 
     /// <summary>
     /// Get the first item, if any. Otherwise return the default value.
@@ -59,5 +62,6 @@ public static class QueryExtensions
     /// <typeparam name="T"></typeparam>
     /// <returns>The first item, if any, otherwise the computed default value</returns>
     [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultValue) => enumerable.FirstOrDefault(() => defaultValue);
+    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultValue) =>
+        enumerable.FirstOrDefault(() => defaultValue);
 }

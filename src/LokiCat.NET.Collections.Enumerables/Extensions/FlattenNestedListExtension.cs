@@ -13,7 +13,9 @@ public static class FlattenNestedListExtension
     /// <param name="enumerable">Nested collection</param>
     /// <typeparam name="T">The types of items stored in the collection</typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
-    public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> enumerable) => enumerable.SelectMany(x => x);
+    public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> enumerable) =>
+        enumerable.SelectMany(x => x);
 }

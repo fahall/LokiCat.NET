@@ -18,6 +18,7 @@ public static class FlushingExtensions
     {
         var data = items.ToArray();
         items.Clear();
+
         return data;
     }
 }

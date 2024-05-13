@@ -17,6 +17,6 @@ public static class GetOrDefaultExtensionsReadOnly
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
     [PublicAPI]
-    public static TValue GetOrDefault<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dict, TKey key, TValue defaultValue) =>
-        dict.ContainsKey(key) ? dict[key] : defaultValue;
+    public static TValue GetOrDefault<TKey, TValue>(this IReadOnlyDictionary<TKey, TValue> dict, TKey key,
+        TValue defaultValue) => dict.ContainsKey(key) ? dict[key] : defaultValue;
 }

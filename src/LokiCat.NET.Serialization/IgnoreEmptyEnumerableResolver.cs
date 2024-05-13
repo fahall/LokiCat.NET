@@ -9,6 +9,7 @@ namespace LokiCat.NET.Serialization;
 /// <summary>
 /// Ignore empty enumerable properties when serializing.
 /// </summary>
+
 // TODO: Write Tests to cover this function. 
 [PublicAPI]
 public class IgnoreEmptyEnumerableResolver : DefaultContractResolver

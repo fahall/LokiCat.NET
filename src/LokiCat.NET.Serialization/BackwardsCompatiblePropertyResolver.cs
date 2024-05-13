@@ -47,5 +47,4 @@ public class BackwardsCompatiblePropertyResolver : DefaultContractResolver
 
         return properties;
     }
-
 }

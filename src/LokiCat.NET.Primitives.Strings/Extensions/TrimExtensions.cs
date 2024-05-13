@@ -18,8 +18,8 @@ public static class TrimExtensions
     /// </param>
     /// <returns>The trimmed text</returns>
     [PublicAPI]
-    public static string Trim(this string text, char character, int maxToRemove = int.MaxValue) 
-        => text.Trim($"{character}", maxToRemove);
+    public static string Trim(this string text, char character, int maxToRemove = int.MaxValue) =>
+        text.Trim($"{character}", maxToRemove);
 
     /// <summary>
     /// Remove the character from the end of the string up to maxToRemove times.
@@ -31,9 +31,9 @@ public static class TrimExtensions
     /// </param>
     /// <returns>The trimmed text</returns>
     [PublicAPI]
-    public static string TrimEnd(this string text, char character, int maxToRemove = int.MaxValue)
-        => text.TrimEnd($"{character}", maxToRemove);
-        
+    public static string TrimEnd(this string text, char character, int maxToRemove = int.MaxValue) =>
+        text.TrimEnd($"{character}", maxToRemove);
+
     /// <summary>
     /// Remove the character from the start of the string up to maxToRemove times.
     /// </summary>
@@ -44,9 +44,9 @@ public static class TrimExtensions
     /// </param>
     /// <returns>The trimmed text</returns>
     [PublicAPI]
-    public static string TrimStart(this string text, char character, int maxToRemove = int.MaxValue)
-        => text.TrimStart($"{character}", maxToRemove);
-        
+    public static string TrimStart(this string text, char character, int maxToRemove = int.MaxValue) =>
+        text.TrimStart($"{character}", maxToRemove);
+
     /// <summary>
     /// Remove the characters from the start and end of the string up to maxToRemove times each.
     /// </summary>
@@ -58,8 +58,8 @@ public static class TrimExtensions
     /// </param>
     /// <returns>The trimmed text</returns>
     [PublicAPI]
-    public static string Trim(this string text, string charactersToRemove, int maxToRemove = int.MaxValue)
-        => text.TrimStart(charactersToRemove, maxToRemove).TrimEnd(charactersToRemove, maxToRemove);
+    public static string Trim(this string text, string charactersToRemove, int maxToRemove = int.MaxValue) =>
+        text.TrimStart(charactersToRemove, maxToRemove).TrimEnd(charactersToRemove, maxToRemove);
 
     /// <summary>
     /// Remove the characters from the end of the string up to maxToRemove times.
@@ -73,12 +73,13 @@ public static class TrimExtensions
     [PublicAPI]
     public static string TrimEnd(this string text, string suffixToRemove, int maxToRemove = int.MaxValue)
     {
-        if (suffixToRemove.IsNullOrEmpty()) 
+        if (suffixToRemove.IsNullOrEmpty())
             return text;
         if (text.IsNullOrEmpty())
             return text;
-            
+
         var removedSoFar = 0;
+
         while (removedSoFar < maxToRemove && text.EndsWith(suffixToRemove))
         {
             text = text[..^suffixToRemove.Length];
@@ -97,16 +98,16 @@ public static class TrimExtensions
     /// The maximum number of times to remove the text from the start
     /// </param>
     /// <returns>The trimmed text</returns>
-    [PublicAPI] 
+    [PublicAPI]
     public static string TrimStart(this string text, string prefixToRemove, int maxToRemove = int.MaxValue)
     {
-            
-        if (prefixToRemove.IsNullOrEmpty()) 
+        if (prefixToRemove.IsNullOrEmpty())
             return text;
         if (text.IsNullOrEmpty())
             return text;
-            
+
         var removedSoFar = 0;
+
         while (removedSoFar < maxToRemove && text.StartsWith(prefixToRemove))
         {
             text = text.Substring(prefixToRemove.Length, text.Length - prefixToRemove.Length);
@@ -114,5 +115,5 @@ public static class TrimExtensions
         }
 
         return text;
-    } 
+    }
 }

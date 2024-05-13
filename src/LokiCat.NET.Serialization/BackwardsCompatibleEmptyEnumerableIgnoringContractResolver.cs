@@ -66,12 +66,13 @@ public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : Defaul
                 {
                     return true;
                 }
-                
+
                 var enumerator = enumerable.GetEnumerator();
                 var result = enumerator.MoveNext();
                 (enumerator as IDisposable)?.Dispose();
 
                 return result;
+
                 // if the list is null, we defer the decision to NullValueHandling
             };
         }

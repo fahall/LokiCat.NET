@@ -18,25 +18,25 @@ public static class NearestNeighborExtensions
     /// <typeparam name="TNeighbors"></typeparam>
     /// <typeparam name="TQuery"></typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static IEnumerable<TNeighbors> NearestNeighbors<TNeighbors, TQuery>(
         this IEnumerable<TNeighbors> neighbors,
         TQuery item,
         Func<TQuery, TNeighbors, float> distanceBetween,
-        int count = int.MaxValue) =>
-        neighbors.Minima(n => distanceBetween(item, n)).Take(count);
+        int count = int.MaxValue) => neighbors.Minima(n => distanceBetween(item, n)).Take(count);
 
     /// <summary>
     /// Get the nearest neighbor (KNN where K = 1)
     /// </summary>
     /// <see cref="NearestNeighbors{TNeighbors,TQuery}"/>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static TNeighbors NearestNeighbor<TNeighbors, TQuery>(
         this IEnumerable<TNeighbors> neighbors,
         TQuery item,
         Func<TQuery, TNeighbors, float> distanceBetween,
-        TNeighbors defaultValue)
-        => neighbors.NearestNeighbors(item, distanceBetween, 1).FirstOrDefault(defaultValue);
+        TNeighbors defaultValue) => neighbors.NearestNeighbors(item, distanceBetween, 1).FirstOrDefault(defaultValue);
 }

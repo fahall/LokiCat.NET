@@ -15,6 +15,7 @@ public static class RandomExtensions
     /// note: creating a Random instance each call may not be correct for you,
     /// consider a thread-safe static instance
     /// </remarks>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static T GetRandom<T>(this IEnumerable<T> enumerable) => enumerable.GetRandom(new Random());

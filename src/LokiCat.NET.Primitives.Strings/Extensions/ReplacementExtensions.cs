@@ -19,13 +19,13 @@ public static class ReplacementExtensions
     ///     A new string that is identical to the input string, except that the replacement string takes the place of each
     ///     matched string.
     /// </returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     [Pure]
     public static string ReplaceRegex(this string text, string pattern, string replacement,
-        RegexOptions options = RegexOptions.None) =>
-        Regex.Replace(text, pattern, replacement,
-                      options);
+        RegexOptions options = RegexOptions.None) => Regex.Replace(text, pattern, replacement,
+                                                                   options);
 
     /// <summary>
     /// Perform regular expression replacement on the input text
@@ -34,11 +34,12 @@ public static class ReplacementExtensions
     /// <param name="regex">Regular Expression to match</param>
     /// <param name="replacement">Replacement (full Regex replacement support)</param>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     [Pure]
-    public static string ReplaceRegex(this string text, Regex regex, string replacement)
-        => regex.Replace(text, replacement);
+    public static string ReplaceRegex(this string text, Regex regex, string replacement) =>
+        regex.Replace(text, replacement);
 
     /// <summary>
     /// Perform regular expression replacement on the input text
@@ -53,9 +54,8 @@ public static class ReplacementExtensions
     [PublicAPI]
     [Pure]
     public static string ReplaceRegex(this string text, string pattern, MatchEvaluator replacement,
-        RegexOptions options = RegexOptions.None) =>
-        Regex.Replace(text, pattern, replacement,
-                      options);
+        RegexOptions options = RegexOptions.None) => Regex.Replace(text, pattern, replacement,
+                                                                   options);
 
     /// <summary>
     ///     Replaces a string's old value with a new value using the string comparison type.
@@ -65,6 +65,7 @@ public static class ReplacementExtensions
     /// <param name="newValue">The new value to replace.</param>
     /// <param name="comparisonType">The type of comparison to use.</param>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     [Pure]
@@ -82,7 +83,8 @@ public static class ReplacementExtensions
                 break;
             }
 
-            originalString = $"{originalString[..startIndex]}{newValue}{originalString[(startIndex + oldValue.Length)..]}";
+            originalString =
+                $"{originalString[..startIndex]}{newValue}{originalString[(startIndex + oldValue.Length)..]}";
 
             startIndex += newValue.Length;
         }

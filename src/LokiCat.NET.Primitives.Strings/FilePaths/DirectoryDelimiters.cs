@@ -9,6 +9,7 @@ public static class DirectoryDelimiters
     /// The unix directory delimiter.
     /// </summary>
     public const char UNIX = '/';
+
     /// <summary>
     /// The windows directory delimiter.
     /// </summary>

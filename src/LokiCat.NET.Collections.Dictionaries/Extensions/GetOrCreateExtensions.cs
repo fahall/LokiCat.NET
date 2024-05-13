@@ -16,6 +16,7 @@ public static class GetOrCreateExtensions
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static TValue GetOrCreate<TKey, TValue>(IDictionary<TKey, TValue> dict, TKey key, TValue defaultValue)
@@ -24,7 +25,7 @@ public static class GetOrCreateExtensions
 
         return dict[key];
     }
-        
+
     /// <summary>
     /// Get value from dictionary, creating it if it does not exist.
     /// </summary>
@@ -34,6 +35,7 @@ public static class GetOrCreateExtensions
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static TValue GetOrCreate<TKey, TValue>(IDictionary<TKey, TValue> dict, TKey key, Func<TValue> create)

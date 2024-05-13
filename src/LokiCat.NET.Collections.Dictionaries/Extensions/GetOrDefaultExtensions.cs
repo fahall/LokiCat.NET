@@ -16,8 +16,10 @@ public static class GetOrDefaultExtensions
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     /// <returns></returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
-    public static TValue GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key, TValue defaultValue) 
-        => dict.TryGetValue(key, out var value) ? value : defaultValue;
+    public static TValue
+        GetOrDefault<TKey, TValue>(this IDictionary<TKey, TValue> dict, TKey key, TValue defaultValue) =>
+        dict.TryGetValue(key, out var value) ? value : defaultValue;
 }

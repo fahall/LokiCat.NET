@@ -16,8 +16,7 @@ public static class CombinationExtensions
     /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetCombinations<T>(this IEnumerable<T> list,
-        IEnumerable<int> lengths) where T : IComparable =>
-        Collect(list, GetCombinationsWithDuplicates, lengths);
+        IEnumerable<int> lengths) where T : IComparable => Collect(list, GetCombinationsWithDuplicates, lengths);
 
     /// <summary>
     /// Get all unique combinations of a given length from a list
@@ -28,8 +27,7 @@ public static class CombinationExtensions
     /// <returns></returns>
     [PublicAPI]
     public static IEnumerable<IEnumerable<T>> GetCombinationsUnique<T>(this IEnumerable<T> list,
-        IEnumerable<int> lengths) where T : IComparable =>
-        Collect(list, GetCombinationsUnique, lengths.Distinct());
+        IEnumerable<int> lengths) where T : IComparable => Collect(list, GetCombinationsUnique, lengths.Distinct());
 
     /// <summary>
     /// Get all permutations of a given length from a list
@@ -39,7 +37,8 @@ public static class CombinationExtensions
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
     [PublicAPI]
-    public static IEnumerable<IEnumerable<T>> GetPermutations<T>(this IEnumerable<T> list, IEnumerable<int> lengths) => Collect(list, GetPermutationsWithDuplicates, lengths);
+    public static IEnumerable<IEnumerable<T>> GetPermutations<T>(this IEnumerable<T> list, IEnumerable<int> lengths) =>
+        Collect(list, GetPermutationsWithDuplicates, lengths);
 
     /// <summary>
     /// Get all unique permutations of a given length from a list
@@ -49,19 +48,21 @@ public static class CombinationExtensions
     /// <typeparam name="T"></typeparam>
     /// <returns></returns>
     [PublicAPI]
-    public static IEnumerable<IEnumerable<T>> GetPermutationsUnique<T>(this IEnumerable<T> list, IEnumerable<int> lengths) => Collect(list, GetPermutationsUnique, lengths.Distinct());
+    public static IEnumerable<IEnumerable<T>> GetPermutationsUnique<T>(this IEnumerable<T> list,
+        IEnumerable<int> lengths) => Collect(list, GetPermutationsUnique, lengths.Distinct());
 
     private static IEnumerable<IEnumerable<T>> GetCombinationsWithDuplicates<T>(IEnumerable<T> enumerable,
         int combinationLength) where T : IComparable
     {
         var list = enumerable.ToArray();
+
         return combinationLength == 1
             ? list.Select(t => new[] { t })
             : GetCombinationsWithDuplicates(list, combinationLength - 1)
                 .SelectMany(t => list.Where(o => o.CompareTo(t.Last()) >= 0),
                             (t1, t2) => t1.Concat(new[] { t2 }));
     }
-        
+
     private static IEnumerable<IEnumerable<T>>
         GetCombinationsUnique<T>(IEnumerable<T> enumerable, int length) where T : IComparable
     {
@@ -100,7 +101,7 @@ public static class CombinationExtensions
             .SelectMany(t => list.Where(o => !t.Contains(o)),
                         (t1, t2) => t1.Concat(new[] { t2 }));
     }
-        
+
     private static IEnumerable<IEnumerable<T>> Collect<T>(IEnumerable<T> items,
         Func<IEnumerable<T>, int, IEnumerable<IEnumerable<T>>> action, IEnumerable<int> lengths)
     {

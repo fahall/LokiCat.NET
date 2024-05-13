@@ -22,7 +22,7 @@ public class FilePathExtensionsShould
     {
         input.ToUnixPath().Should().Be(expected);
     }
-    
+
     [Theory]
     [InlineData("C:/Users/user/Documents/file.txt", @"C:\Users\user\Documents\file.txt")]
     [InlineData("D:/Program Files/Project/file.txt", @"D:\Program Files\Project\file.txt")]
@@ -36,12 +36,11 @@ public class FilePathExtensionsShould
     [InlineData("root/", @"root\")] // Slash at end
     [InlineData(@"\root", @"\root")] // Correct Slash at beginning
     [InlineData(@"root\", @"root\")] // Correct Slash at end
-    
     public void ConvertToWindowsPath(string input, string expected)
     {
         input.ToWindowsPath().Should().Be(expected);
     }
-    
+
     [Theory]
     [InlineData(@"C:\Users\user\Documents\file.txt", @"C:\Users\user\Documents\file.txt")]
     [InlineData("C:/Users/user/Documents/file.txt", @"C:\Users\user\Documents\file.txt")]
@@ -59,7 +58,7 @@ public class FilePathExtensionsShould
         var expectedOnCurrentPlatform = expected
                                         .Replace('\\', Path.DirectorySeparatorChar)
                                         .Replace('/', Path.DirectorySeparatorChar);
-        
+
         actual.Should().Be(expectedOnCurrentPlatform);
     }
 }

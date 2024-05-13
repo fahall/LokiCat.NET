@@ -13,6 +13,7 @@ public static class HashSetExtensions
     /// <param name="set">The set we're adding to</param>
     /// <param name="items">The items to add to the set</param>
     /// <typeparam name="T"></typeparam>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static void AddRange<T>(this HashSet<T> set, IEnumerable<T> items)

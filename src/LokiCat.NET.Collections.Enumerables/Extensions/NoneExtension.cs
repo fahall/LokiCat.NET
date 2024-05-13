@@ -16,6 +16,7 @@ public static class NoneExtension
     /// true if collection is empty.
     /// false if any items in collection
     /// </returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static bool None<T>(this IEnumerable<T> enumerable) => !enumerable.Any();
@@ -30,6 +31,7 @@ public static class NoneExtension
     /// true if collection has nothing matching the predicate.
     /// false if any items in collection match predicate
     /// </returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
     public static bool None<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate) => !enumerable.Any(predicate);

@@ -13,7 +13,9 @@ public static class NullCheckExtensions
     /// <param name="items">Items to filter</param>
     /// <typeparam name="T"></typeparam>
     /// <returns>An IEnumerable</returns>
+
     // TODO: Write Tests to cover this function. 
     [PublicAPI]
-    public static IEnumerable<T> NonNulls<T>(this IEnumerable<T> items) where T : class? => items.Where(t => t is not null);
+    public static IEnumerable<T> NonNulls<T>(this IEnumerable<T> items) where T : class? =>
+        items.Where(t => t is not null);
 }

@@ -24,8 +24,9 @@ public static class PathMergingExtensions
     /// </remarks>
     /// <returns>A unix style path</returns>
     [PublicAPI]
-    public static string MergePathUnix(this string root, string child) => root.MergePath(child, DirectoryDelimiters.UNIX);
-    
+    public static string MergePathUnix(this string root, string child) =>
+        root.MergePath(child, DirectoryDelimiters.UNIX);
+
     /// <summary>
     /// Merge two paths together, trying to combine any overlap between them. (will use largest possible overlap if multiple overlaps exist)
     /// </summary>
@@ -42,8 +43,9 @@ public static class PathMergingExtensions
     /// </remarks>
     /// <returns>A Windows/DOS style path</returns>
     [PublicAPI]
-    public static string MergePathWindows(this string root, string child) => root.MergePath(child, DirectoryDelimiters.WINDOWS);
-    
+    public static string MergePathWindows(this string root, string child) =>
+        root.MergePath(child, DirectoryDelimiters.WINDOWS);
+
     /// <summary>
     /// Merge two paths together, trying to combine any overlap between them. (will use largest possible overlap if multiple overlaps exist)
     /// </summary>
@@ -65,23 +67,26 @@ public static class PathMergingExtensions
     {
         var hasRoot = root.HasGlyphs();
         var hasChild = child.HasGlyphs();
-        
+
         if (!hasRoot && !hasChild)
         {
             return string.Empty;
         }
-        if(hasRoot && !hasChild)
+
+        if (hasRoot && !hasChild)
         {
             return root.ToCustomPath(delimiter);
         }
-        if(!hasRoot && hasChild)
+
+        if (!hasRoot && hasChild)
         {
             return child.ToCustomPath(delimiter);
         }
-        
+
         var left = root.ToCustomPath(delimiter);
         var right = child.ToCustomPath(delimiter);
         var core = GetPathCore(left, right, delimiter);
+
         return AddTrailingAndLeadingDelimiters(left, right, core, delimiter);
     }
 
@@ -90,6 +95,7 @@ public static class PathMergingExtensions
         var sep = $"{delimiter}";
         var prefix = root.StartsWith(delimiter) ? sep : "";
         var suffix = child.EndsWith(delimiter) ? sep : "";
+
         return $"{prefix}{core}{suffix}";
     }
 
@@ -109,6 +115,7 @@ public static class PathMergingExtensions
                 // Not a match - Try shorter matches
                 continue;
             }
+
             nonOverlapRight = right.Skip(i).ToArray();
 
             break;
