@@ -1,0 +1,22 @@
+<Project>
+    <PropertyGroup>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Authors>Alex Hall</Authors>
+        <Description>Simple extensions to commonly used types</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <EnablePackageValidation>true</EnablePackageValidation>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="icon.png" Pack="true" PackagePath="/" />
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
+    </ItemGroup>
+</Project>

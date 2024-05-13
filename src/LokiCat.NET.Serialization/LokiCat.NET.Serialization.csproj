@@ -1,29 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Authors>Alex Hall</Authors>
-        <Description>Simple extensions to commonly used types</Description>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageIcon>icon.png</PackageIcon>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
-        <EnablePackageValidation>true</EnablePackageValidation>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
         <RootNamespace>LokiCat.NET.Serialization</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-          <PrivateAssets>all</PrivateAssets>
-        </PackageReference>
-        <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="../icon.png" Pack="true" PackagePath="" />
         <None Include="docs/README.md" Pack="true" PackagePath="/" />
     </ItemGroup>
 </Project>
