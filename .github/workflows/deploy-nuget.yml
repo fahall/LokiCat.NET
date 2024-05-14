@@ -12,12 +12,6 @@ on:
         
   workflow_call:
     inputs:
-      skipTests:
-        required: false
-        default: false
-        description: "Skip running tests (default: false). Use if you have already run tests in a previous job."
-        type: boolean
-
       deploy:
         required: false
         default: false
@@ -81,7 +75,6 @@ jobs:
 
   run_test:
     runs-on: ubuntu-latest
-    if: ${{ !inputs.skipTests }}
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET

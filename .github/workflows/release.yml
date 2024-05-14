@@ -108,7 +108,6 @@ jobs:
     secrets: inherit
     if: ${{ needs.create-release.outputs.release-tag != '' }}
     with:
-      skipTests: true
       deploy: true
     
 
