@@ -13,6 +13,7 @@
         <PackageProjectUrl>https://www.alexhall.org</PackageProjectUrl>
         <PackageTags>extensions,primitives,collections,convenience,experimental</PackageTags>
         <MinVerTagPrefix>v</MinVerTagPrefix>
+        <MinVerVerbosity>detailed</MinVerVerbosity>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
