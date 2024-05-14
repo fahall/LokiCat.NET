@@ -83,7 +83,6 @@ jobs:
         with:
           name: ${{ steps.version.outputs.version }}
           tag: ${{ steps.version.outputs.version_tag }}
-          prerelease: true
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
