@@ -93,7 +93,7 @@ jobs:
       # Tag added to repo and associated with release. 
       # Format: "v<MAJOR>.<Minor>.<patch>"
       # Example: v1.20.150
-      release-tag: ${{ steps.version.outputs.version-tag  }}
+      release-tag: ${{ steps.version.outputs.version_tag  }}
       ########################################
       # Version Number: 
       # The version number to assign to release
