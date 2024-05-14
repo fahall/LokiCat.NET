@@ -11,28 +11,6 @@ categories:
       - 'chore'
 exclude-labels:
   - 'skip-changelog'
-
-autolabeler:
-  - label: 'chore'
-    branch:
-      - '/chore\/.+/'
-      - '/docs\/.+/'
-    body:
-      - '/#chore/'
-      - '/#docs/'
-  - label: 'bug'
-    branch:
-      - '/fix\/.+/'
-    body:
-      - '/#fix/'
-  - label: 'feature'
-    branch:
-      - '/feature\/.+/'
-    body:
-      - '/#feature/'
-  - label: 'skip-changelog'
-    body:
-      '/#skip-changelog/'
 template: |
   ## What’s Changed
 
