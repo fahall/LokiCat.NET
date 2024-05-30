@@ -1,21 +1,24 @@
-﻿using JetBrains.Annotations;
+﻿using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 
-namespace LokiCat.NET.Collections.Enumerables.Extensions;
-
-/// <summary>
-/// Extensions for flattening nested collections
-/// </summary>
-public static class FlattenNestedListExtension
+namespace LokiCat.NET.Collections.Enumerables.Extensions
 {
     /// <summary>
-    /// Converts a nested enumerable into a single, flat enumerable
+    /// Extensions for flattening nested collections
     /// </summary>
-    /// <param name="enumerable">Nested collection</param>
-    /// <typeparam name="T">The types of items stored in the collection</typeparam>
-    /// <returns></returns>
+    public static class FlattenNestedListExtension
+    {
+        /// <summary>
+        /// Converts a nested enumerable into a single, flat enumerable
+        /// </summary>
+        /// <param name="enumerable">Nested collection</param>
+        /// <typeparam name="T">The types of items stored in the collection</typeparam>
+        /// <returns></returns>
 
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> enumerable) =>
-        enumerable.SelectMany(x => x);
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static IEnumerable<T> Flatten<T>(this IEnumerable<IEnumerable<T>> enumerable) =>
+            enumerable.SelectMany(x => x);
+    }
 }

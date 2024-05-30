@@ -6,11 +6,11 @@
 
     <ItemGroup>
         <PackageReference Include="MinVer" Version="5.0.0">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-        <None Include="docs/README.md" Pack="true" PackagePath="/" />
-        <None Include="../icon.png" Pack="true" PackagePath="/" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+        <None Include="docs/README.md" Pack="true" PackagePath="/"/>
+        <None Include="../icon.png" Pack="true" PackagePath="/"/>
     </ItemGroup>
 </Project>

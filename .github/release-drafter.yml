@@ -7,7 +7,7 @@ categories:
       - 'bugfix'
       - 'bug'
   - title: '🧹 Chores'
-    labels: 
+    labels:
       - 'chore'
 exclude-labels:
   - 'skip-changelog'

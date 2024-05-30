@@ -5,15 +5,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj" />
-        <None Include="docs/README.md" Pack="true" PackagePath="/" />
-        <None Include="../icon.png" Pack="true" PackagePath="/" />
+        <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj"/>
+        <None Include="docs/README.md" Pack="true" PackagePath="/"/>
+        <None Include="../icon.png" Pack="true" PackagePath="/"/>
+        <ProjectReference Include="..\LokiCat.NET.GuardClauses\LokiCat.NET.GuardClauses.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MinVer" Version="5.0.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
+        <PackageReference Include="MinVer" Version="5.0.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>

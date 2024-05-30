@@ -1,82 +1,84 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Reflection;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace LokiCat.NET.Serialization;
-
-// TODO: Write Tests to cover this class. 
-/// <summary>
-/// Supports <see cref="FallbackJsonProperty"/> for backwards compatible json property name changes  and ignores empty enumerables.
-/// </summary>
-[PublicAPI]
-public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : DefaultContractResolver
+namespace LokiCat.NET.Serialization
 {
-    /// <inheritdoc />
-    protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
+    // TODO: Write Tests to cover this class. 
+    /// <summary>
+    /// Supports <see cref="FallbackJsonProperty"/> for backwards compatible json property name changes  and ignores empty enumerables.
+    /// </summary>
+    [PublicAPI]
+    public class BackwardsCompatibleEmptyEnumerableIgnoringContractResolver : DefaultContractResolver
     {
-        var typeMembers = GetSerializableMembers(type);
-        var properties = new List<JsonProperty>();
-
-        foreach (var member in typeMembers)
+        /// <inheritdoc />
+        protected override IList<JsonProperty> CreateProperties(Type type, MemberSerialization memberSerialization)
         {
-            var property = CreateProperty(member, memberSerialization);
-            properties.Add(property);
+            var typeMembers = GetSerializableMembers(type);
+            var properties = new List<JsonProperty>();
 
-            var fallbackAttribute = member.GetCustomAttribute<FallbackJsonProperty>();
-
-            if (fallbackAttribute is null)
+            foreach (var member in typeMembers)
             {
-                continue;
-            }
+                var property = CreateProperty(member, memberSerialization);
+                properties.Add(property);
 
-            property.PropertyName = fallbackAttribute.PreferredName;
+                var fallbackAttribute = member.GetCustomAttribute<FallbackJsonProperty>();
 
-            foreach (var alternateName in fallbackAttribute.FallbackReadNames)
-            {
-                var fallbackProperty = CreateProperty(member, memberSerialization);
-                fallbackProperty.PropertyName = alternateName;
-                fallbackProperty.ShouldSerialize = _ => false;
-                properties.Add(fallbackProperty);
-            }
-        }
-
-        return properties;
-    }
-
-    /// <inheritdoc />
-    protected override JsonProperty CreateProperty(MemberInfo member,
-        MemberSerialization memberSerialization)
-    {
-        var property = base.CreateProperty(member, memberSerialization);
-
-        if (property.PropertyType != typeof(string) && typeof(IEnumerable).IsAssignableFrom(property.PropertyType))
-        {
-            property.ShouldSerialize = instance =>
-            {
-                // this value could be in a public field or public property
-
-                if (member.MemberType switch
-                    {
-                        MemberTypes.Property => instance.GetType().GetProperty(member.Name)?.GetValue(instance, null),
-                        MemberTypes.Field => instance.GetType().GetField(member.Name)?.GetValue(instance),
-                        _ => null,
-                    } is not IEnumerable enumerable)
+                if (fallbackAttribute is null)
                 {
-                    return true;
+                    continue;
                 }
 
-                var enumerator = enumerable.GetEnumerator();
-                var result = enumerator.MoveNext();
-                (enumerator as IDisposable)?.Dispose();
+                property.PropertyName = fallbackAttribute.PreferredName;
 
-                return result;
+                foreach (var alternateName in fallbackAttribute.FallbackReadNames)
+                {
+                    var fallbackProperty = CreateProperty(member, memberSerialization);
+                    fallbackProperty.PropertyName = alternateName;
+                    fallbackProperty.ShouldSerialize = _ => false;
+                    properties.Add(fallbackProperty);
+                }
+            }
 
-                // if the list is null, we defer the decision to NullValueHandling
-            };
+            return properties;
         }
 
-        return property;
+        /// <inheritdoc />
+        protected override JsonProperty CreateProperty(MemberInfo member,
+            MemberSerialization memberSerialization)
+        {
+            var property = base.CreateProperty(member, memberSerialization);
+
+            if (property.PropertyType != typeof(string) && typeof(IEnumerable).IsAssignableFrom(property.PropertyType))
+            {
+                property.ShouldSerialize = instance =>
+                {
+                    // this value could be in a public field or public property
+
+                    if (!((member.MemberType == MemberTypes.Property
+                            ? instance.GetType().GetProperty(member.Name)?.GetValue(instance, null)
+                            : member.MemberType == MemberTypes.Field
+                                ? instance.GetType().GetField(member.Name)?.GetValue(instance)
+                                : null) is IEnumerable enumerable))
+                    {
+                        return true;
+                    }
+
+                    var enumerator = enumerable.GetEnumerator();
+                    var result = enumerator.MoveNext();
+                    (enumerator as IDisposable)?.Dispose();
+
+                    return result;
+
+                    // if the list is null, we defer the decision to NullValueHandling
+                };
+            }
+
+            return property;
+        }
     }
 }

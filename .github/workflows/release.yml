@@ -6,7 +6,7 @@
 # Release Notes generated using https://github.com/release-drafter/release-drafter/blob/master/README.md
 
 on:
-  workflow_dispatch: {} # Allows manual triggering of the workflow
+  workflow_dispatch: { } # Allows manual triggering of the workflow
   push:
     branches:
       - main
@@ -51,7 +51,7 @@ jobs:
 
   create-release:
     runs-on: ubuntu-latest
-    needs: [run-test, check-deploy-status]
+    needs: [ run-test, check-deploy-status ]
     if: ${{ needs.check-deploy-status.outputs.should-deploy == 'true' }}
     steps:
       - name: Checkout
@@ -100,10 +100,10 @@ jobs:
       # Format: <MAJOR>.<Minor>.<patch>
       # Example: 1.20.150
       version-number: ${{ steps.version.outputs.version }}
-      
+  
   deploy-nuget:
     uses: ./.github/workflows/deploy-nuget.yml
-    needs: [create-release, run-test]
+    needs: [ create-release, run-test ]
     secrets: inherit
     if: ${{ needs.create-release.outputs.release-tag != '' }}
     with:

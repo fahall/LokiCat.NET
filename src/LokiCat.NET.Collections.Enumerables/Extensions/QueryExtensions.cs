@@ -1,67 +1,71 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
 
-namespace LokiCat.NET.Collections.Enumerables.Extensions;
-
-/// <summary>
-/// Extensions for querying collections.
-/// </summary>
-public static class QueryExtensions
+namespace LokiCat.NET.Collections.Enumerables.Extensions
 {
     /// <summary>
-    /// Get the first item matching a predicate; if no match exists, return a default value.
+    /// Extensions for querying collections.
     /// </summary>
-    /// <param name="enumerable">The collection to query</param>
-    /// <param name="predicate">The requirement for which we're trying to find a matching item</param>
-    /// <param name="defaultValue">The value to return if no match is found</param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns>The first match found if any, otherwise the default value</returns>
-
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate, T defaultValue) =>
-        enumerable.FirstOrDefault(predicate, () => defaultValue);
-
-    /// <summary>
-    /// Get the first item matching a predicate; if no match exists, return a default value.
-    /// </summary>
-    /// <param name="enumerable">The collection to query</param>
-    /// <param name="predicate">The requirement for which we're trying to find a matching item</param>
-    /// <param name="getDefaultValue">Compute the default value.</param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns>The first match found if any, otherwise the default value</returns>
-    [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate, Func<T> getDefaultValue)
+    public static class QueryExtensions
     {
-        foreach (var item in enumerable)
+        /// <summary>
+        /// Get the first item matching a predicate; if no match exists, return a default value.
+        /// </summary>
+        /// <param name="enumerable">The collection to query</param>
+        /// <param name="predicate">The requirement for which we're trying to find a matching item</param>
+        /// <param name="defaultValue">The value to return if no match is found</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The first match found if any, otherwise the default value</returns>
+
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate, T defaultValue) =>
+            enumerable.FirstOrDefault(predicate, () => defaultValue);
+
+        /// <summary>
+        /// Get the first item matching a predicate; if no match exists, return a default value.
+        /// </summary>
+        /// <param name="enumerable">The collection to query</param>
+        /// <param name="predicate">The requirement for which we're trying to find a matching item</param>
+        /// <param name="getDefaultValue">Compute the default value.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The first match found if any, otherwise the default value</returns>
+        [PublicAPI]
+        public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate,
+            Func<T> getDefaultValue)
         {
-            if (predicate(item))
+            foreach (var item in enumerable)
             {
-                return item;
+                if (predicate(item))
+                {
+                    return item;
+                }
             }
+
+            return getDefaultValue();
         }
 
-        return getDefaultValue();
+        /// <summary>
+        /// Get the first item, if any. Otherwise return the default value.
+        /// </summary>
+        /// <param name="enumerable">The collection to query</param>
+        /// <param name="getDefaultValue">Compute the default value.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The first item, if any, otherwise the default value</returns>
+        [PublicAPI]
+        public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T> getDefaultValue) =>
+            enumerable.FirstOrDefault(_ => true, getDefaultValue);
+
+        /// <summary>
+        /// Get the first item, if any. Otherwise return the default value.
+        /// </summary>
+        /// <param name="enumerable">The collection to query</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>The first item, if any, otherwise the computed default value</returns>
+        [PublicAPI]
+        public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultValue) =>
+            enumerable.FirstOrDefault(() => defaultValue);
     }
-
-    /// <summary>
-    /// Get the first item, if any. Otherwise return the default value.
-    /// </summary>
-    /// <param name="enumerable">The collection to query</param>
-    /// <param name="getDefaultValue">Compute the default value.</param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns>The first item, if any, otherwise the default value</returns>
-    [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, Func<T> getDefaultValue) =>
-        enumerable.FirstOrDefault(_ => true, getDefaultValue);
-
-    /// <summary>
-    /// Get the first item, if any. Otherwise return the default value.
-    /// </summary>
-    /// <param name="enumerable">The collection to query</param>
-    /// <param name="defaultValue">The default value.</param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns>The first item, if any, otherwise the computed default value</returns>
-    [PublicAPI]
-    public static T FirstOrDefault<T>(this IEnumerable<T> enumerable, T defaultValue) =>
-        enumerable.FirstOrDefault(() => defaultValue);
 }

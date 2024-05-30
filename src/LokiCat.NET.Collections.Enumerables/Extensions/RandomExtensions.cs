@@ -1,42 +1,46 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 using LokiCat.NET.Collections.Exceptions;
 
-namespace LokiCat.NET.Collections.Enumerables.Extensions;
-
-/// <summary>
-/// Extensions for working with random values
-/// </summary>
-public static class RandomExtensions
+namespace LokiCat.NET.Collections.Enumerables.Extensions
 {
-    /// <inheritdoc>
-    ///     <cref>RandomExtensions.GetRandom(IEnumerable{T},Random)</cref>
-    /// </inheritdoc>
-    /// <remarks>
-    /// note: creating a Random instance each call may not be correct for you,
-    /// consider a thread-safe static instance
-    /// </remarks>
-
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static T GetRandom<T>(this IEnumerable<T> enumerable) => enumerable.GetRandom(new Random());
-
     /// <summary>
-    /// Get a random item from the collection, using the passed randomizer
+    /// Extensions for working with random values
     /// </summary>
-    /// <param name="enumerable">The collection from which to draw an item</param>
-    /// <param name="randomizer">Responsible for providing the random value</param>
-    /// <typeparam name="T"></typeparam>
-    /// <returns>A random value from the collection</returns>
-    [PublicAPI]
-    public static T GetRandom<T>(this IEnumerable<T> enumerable, Random randomizer)
+    public static class RandomExtensions
     {
-        var arr = enumerable.ToArray();
+        /// <inheritdoc>
+        ///     <cref>RandomExtensions.GetRandom(IEnumerable{T},Random)</cref>
+        /// </inheritdoc>
+        /// <remarks>
+        /// note: creating a Random instance each call may not be correct for you,
+        /// consider a thread-safe static instance
+        /// </remarks>
 
-        if (arr.None())
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static T GetRandom<T>(this IEnumerable<T> enumerable) => enumerable.GetRandom(new Random());
+
+        /// <summary>
+        /// Get a random item from the collection, using the passed randomizer
+        /// </summary>
+        /// <param name="enumerable">The collection from which to draw an item</param>
+        /// <param name="randomizer">Responsible for providing the random value</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>A random value from the collection</returns>
+        [PublicAPI]
+        public static T GetRandom<T>(this IEnumerable<T> enumerable, Random randomizer)
         {
-            throw new EmptyCollectionException("Cannot get a random item from an empty collection.");
-        }
+            var arr = enumerable.ToArray();
 
-        return arr[randomizer.Next(0, arr.Length)];
+            if (arr.None())
+            {
+                throw new EmptyCollectionException("Cannot get a random item from an empty collection.");
+            }
+
+            return arr[randomizer.Next(0, arr.Length)];
+        }
     }
 }

@@ -1,26 +1,29 @@
-﻿using JetBrains.Annotations;
+﻿using System.Collections.Generic;
+using System.Linq;
+using JetBrains.Annotations;
 
-namespace LokiCat.NET.Collections.Enumerables.Extensions;
-
-/// <summary>
-/// Extensions for aggregating collections into strings
-/// </summary>
-[PublicAPI]
-public static class AggregateStringExtension
+namespace LokiCat.NET.Collections.Enumerables.Extensions
 {
     /// <summary>
-    /// Converts the contents of the enumerable to strings and combines them into a single string, with the passed delimiter
+    /// Extensions for aggregating collections into strings
     /// </summary>
-    /// <param name="items">Items to stringify</param>
-    /// <param name="delimiter">Delimiter between items in output string</param>
-    /// <returns>A string representation of the enumerable's contents.</returns>
     [PublicAPI]
-    public static string AggregateString<T>(this IEnumerable<T> items, string delimiter = ",") => items
-        .Select(t => $"{t}")
-        .Aggregate((current, next) => $"{current}{delimiter}{next}");
+    public static class AggregateStringExtension
+    {
+        /// <summary>
+        /// Converts the contents of the enumerable to strings and combines them into a single string, with the passed delimiter
+        /// </summary>
+        /// <param name="items">Items to stringify</param>
+        /// <param name="delimiter">Delimiter between items in output string</param>
+        /// <returns>A string representation of the enumerable's contents.</returns>
+        [PublicAPI]
+        public static string AggregateString<T>(this IEnumerable<T> items, string delimiter = ",") => items
+            .Select(t => $"{t}")
+            .Aggregate((current, next) => $"{current}{delimiter}{next}");
 
-    /// <inheritdoc cref="AggregateStringExtension.AggregateString{T}(IEnumerable{T}, char)"/>
-    [PublicAPI]
-    public static string AggregateString<T>(this IEnumerable<T> items, char delimiter) => items.Select(t => $"{t}")
-        .Aggregate((current, next) => $"{current}{delimiter}{next}");
+        /// <inheritdoc cref="AggregateStringExtension.AggregateString{T}(IEnumerable{T}, char)"/>
+        [PublicAPI]
+        public static string AggregateString<T>(this IEnumerable<T> items, char delimiter) => items.Select(t => $"{t}")
+            .Aggregate((current, next) => $"{current}{delimiter}{next}");
+    }
 }

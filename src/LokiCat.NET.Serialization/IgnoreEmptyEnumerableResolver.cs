@@ -1,51 +1,52 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Reflection;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace LokiCat.NET.Serialization;
-
-/// <summary>
-/// Ignore empty enumerable properties when serializing.
-/// </summary>
+namespace LokiCat.NET.Serialization
+{
+    /// <summary>
+    /// Ignore empty enumerable properties when serializing.
+    /// </summary>
 
 // TODO: Write Tests to cover this function. 
-[PublicAPI]
-public class IgnoreEmptyEnumerableResolver : DefaultContractResolver
-{
-    /// <inheritdoc />
-    protected override JsonProperty CreateProperty(MemberInfo member,
-        MemberSerialization memberSerialization)
+    [PublicAPI]
+    public class IgnoreEmptyEnumerableResolver : DefaultContractResolver
     {
-        var property = base.CreateProperty(member, memberSerialization);
-
-        if (property.PropertyType != typeof(string) &&
-            typeof(IEnumerable).IsAssignableFrom(property.PropertyType))
+        /// <inheritdoc />
+        protected override JsonProperty CreateProperty(MemberInfo member,
+            MemberSerialization memberSerialization)
         {
-            property.ShouldSerialize = instance =>
+            var property = base.CreateProperty(member, memberSerialization);
+
+            if (property.PropertyType != typeof(string) &&
+                typeof(IEnumerable).IsAssignableFrom(property.PropertyType))
             {
-                // this value could be in a public field or public property
-
-                if (member.MemberType switch
-                    {
-                        MemberTypes.Property => instance.GetType().GetProperty(member.Name)?.GetValue(instance, null),
-                        MemberTypes.Field => instance.GetType().GetField(member.Name)?.GetValue(instance),
-                        _ => null,
-                    } is not IEnumerable enumerable)
+                property.ShouldSerialize = instance =>
                 {
-                    // if the list is null, we defer the decision to NullValueHandling
-                    return true;
-                }
+                    // this value could be in a public field or public property
 
-                var enumerator = enumerable.GetEnumerator();
-                var result = enumerator.MoveNext();
-                (enumerator as IDisposable)?.Dispose();
+                    if (!((member.MemberType == MemberTypes.Property
+                            ? instance.GetType().GetProperty(member.Name)?.GetValue(instance, null)
+                            : member.MemberType == MemberTypes.Field
+                                ? instance.GetType().GetField(member.Name)?.GetValue(instance)
+                                : null) is IEnumerable enumerable))
+                    {
+                        // if the list is null, we defer the decision to NullValueHandling
+                        return true;
+                    }
 
-                return result;
-            };
+                    var enumerator = enumerable.GetEnumerator();
+                    var result = enumerator.MoveNext();
+                    (enumerator as IDisposable)?.Dispose();
+
+                    return result;
+                };
+            }
+
+            return property;
         }
-
-        return property;
     }
 }

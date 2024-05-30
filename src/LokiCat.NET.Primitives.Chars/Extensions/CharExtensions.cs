@@ -1,27 +1,28 @@
 ﻿using JetBrains.Annotations;
 
-namespace LokiCat.NET.Primitives.Chars.Extensions;
-
-/// <summary>
-/// Extensions for char primitives
-/// </summary>
-public static class CharExtensions
+namespace LokiCat.NET.Primitives.Chars.Extensions
 {
-    /// <returns>
-    /// True: character represents whitespace
-    /// False: characters represents a printed glyph (i.e. not whitespace)
-    /// </returns>
+    /// <summary>
+    /// Extensions for char primitives
+    /// </summary>
+    public static class CharExtensions
+    {
+        /// <returns>
+        /// True: character represents whitespace
+        /// False: characters represents a printed glyph (i.e. not whitespace)
+        /// </returns>
 
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static bool IsWhitespace(this char character) => char.IsWhiteSpace(character);
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static bool IsWhitespace(this char character) => char.IsWhiteSpace(character);
 
-    /// <returns>
-    /// True: characters represents a printed glyph (i.e. not whitespace)
-    /// False: character represents whitespace
-    /// </returns>
+        /// <returns>
+        /// True: characters represents a printed glyph (i.e. not whitespace)
+        /// False: character represents whitespace
+        /// </returns>
 
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static bool IsGlyph(this char character) => !character.IsWhitespace();
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static bool IsGlyph(this char character) => !character.IsWhitespace();
+    }
 }

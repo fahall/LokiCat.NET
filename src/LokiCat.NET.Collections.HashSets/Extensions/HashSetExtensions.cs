@@ -1,26 +1,28 @@
-﻿using JetBrains.Annotations;
+﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 
-namespace LokiCat.NET.Collections.HashSets;
-
-/// <summary>
-/// Extensions for HashSets
-/// </summary>
-public static class HashSetExtensions
+namespace LokiCat.NET.Collections.HashSets
 {
     /// <summary>
-    /// AddRange for HashSet
+    /// Extensions for HashSets
     /// </summary>
-    /// <param name="set">The set we're adding to</param>
-    /// <param name="items">The items to add to the set</param>
-    /// <typeparam name="T"></typeparam>
-
-    // TODO: Write Tests to cover this function. 
-    [PublicAPI]
-    public static void AddRange<T>(this HashSet<T> set, IEnumerable<T> items)
+    public static class HashSetExtensions
     {
-        foreach (var item in items)
+        /// <summary>
+        /// AddRange for HashSet
+        /// </summary>
+        /// <param name="set">The set we're adding to</param>
+        /// <param name="items">The items to add to the set</param>
+        /// <typeparam name="T"></typeparam>
+
+        // TODO: Write Tests to cover this function. 
+        [PublicAPI]
+        public static void AddRange<T>(this HashSet<T> set, IEnumerable<T> items)
         {
-            set.Add(item);
+            foreach (var item in items)
+            {
+                set.Add(item);
+            }
         }
     }
 }
