@@ -7,7 +7,7 @@
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <EnablePackageValidation>true</EnablePackageValidation>
         <EnablePackageValidation Condition="'$(IsTestProject)' == 'true'">false</EnablePackageValidation>
-        <TargetFrameworks>net8.0;netstandard20</TargetFrameworks>
+        <TargetFrameworks>net8.0;netstandard20;netstandard21</TargetFrameworks>
         <ImplicitUsings>disable</ImplicitUsings>
         <Nullable Condition="'$(TargetFramework)' == 'net8'">enable</Nullable>
         <PackageProjectUrl>https://www.alexhall.org</PackageProjectUrl>
