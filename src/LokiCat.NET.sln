@@ -35,8 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Primitives.Stri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.Collections.Enumerables.Tests", "LokiCat.NET.Collections.Enumerables.Tests\LokiCat.NET.Collections.Enumerables.Tests.csproj", "{7844F2D4-4FEC-4448-909E-700DF3ACFF86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LokiCat.NET.GuardClauses", "LokiCat.NET.GuardClauses\LokiCat.NET.GuardClauses.csproj", "{2860132F-1E1B-4B73-82C2-98BCD994CF4A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,9 +108,5 @@ Global
 		{7844F2D4-4FEC-4448-909E-700DF3ACFF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7844F2D4-4FEC-4448-909E-700DF3ACFF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7844F2D4-4FEC-4448-909E-700DF3ACFF86}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2860132F-1E1B-4B73-82C2-98BCD994CF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2860132F-1E1B-4B73-82C2-98BCD994CF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2860132F-1E1B-4B73-82C2-98BCD994CF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2860132F-1E1B-4B73-82C2-98BCD994CF4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

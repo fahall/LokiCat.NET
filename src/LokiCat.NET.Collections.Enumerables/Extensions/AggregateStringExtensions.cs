@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using JetBrains.Annotations;
+using MoreLinq.Extensions;
 
 namespace LokiCat.NET.Collections.Enumerables.Extensions
 {
@@ -8,22 +8,11 @@ namespace LokiCat.NET.Collections.Enumerables.Extensions
     /// Extensions for aggregating collections into strings
     /// </summary>
     [PublicAPI]
-    public static class AggregateStringExtension
+    public static class ToDelimitedStringExtension
     {
-        /// <summary>
-        /// Converts the contents of the enumerable to strings and combines them into a single string, with the passed delimiter
-        /// </summary>
-        /// <param name="items">Items to stringify</param>
-        /// <param name="delimiter">Delimiter between items in output string</param>
-        /// <returns>A string representation of the enumerable's contents.</returns>
+        /// <inheritdoc cref="MoreLinq.Extensions.ToDelimitedStringExtension.ToDelimitedString{T}(IEnumerable{T}, string)"/>
         [PublicAPI]
-        public static string AggregateString<T>(this IEnumerable<T> items, string delimiter = ",") => items
-            .Select(t => $"{t}")
-            .Aggregate((current, next) => $"{current}{delimiter}{next}");
-
-        /// <inheritdoc cref="AggregateStringExtension.AggregateString{T}(IEnumerable{T}, char)"/>
-        [PublicAPI]
-        public static string AggregateString<T>(this IEnumerable<T> items, char delimiter) => items.Select(t => $"{t}")
-            .Aggregate((current, next) => $"{current}{delimiter}{next}");
+        public static string ToDelimitedString<T>(this IEnumerable<T> items, char delimiter) =>
+            items.ToDelimitedString($"{delimiter}");
     }
 }

@@ -8,7 +8,6 @@
         <ProjectReference Include="..\LokiCat.NET.Collections.Exceptions\LokiCat.NET.Collections.Exceptions.csproj"/>
         <None Include="docs/README.md" Pack="true" PackagePath="/"/>
         <None Include="../icon.png" Pack="true" PackagePath="/"/>
-        <ProjectReference Include="..\LokiCat.NET.GuardClauses\LokiCat.NET.GuardClauses.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
